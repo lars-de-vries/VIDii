@@ -28,7 +28,6 @@ body {
   margin:0;
 }
 
-
 button:not([disabled]) {
   cursor:pointer;
 }
@@ -40,18 +39,18 @@ img {
 
 
 
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
 :root {
+  --color-background: #000000;
   --color-headings: #FBFBFB;
   --color-text: #FBFBFB;
-  /* ... */
+  --color-timeline: rgb(255, 255, 255, 0.1);
 
+  --color-info-background: #710000;
 }
-
 
 
 
@@ -66,7 +65,19 @@ h1 {
   font-weight: normal;
   line-height: 1.25;
   margin: 1rem 0 0 0;
-  
+}
+
+h2 {
+  color:var(--color-headings);
+  font-family: PP-Editorial-Old, serif;
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: normal;
+  margin: 0 0 0.5em 0;
+}
+
+h3 {
+  font-family: PP-Editorial-Old, serif;
+  color: var(--color-headings);
 }
 
 p {
@@ -88,7 +99,7 @@ body {
   background: url('images/gunbarrel.jpg');
   background-size: cover; */
 
-  background: black;
+  background: var(--color-background);
 
   width: 100vw;
   height: 100vh;
@@ -99,7 +110,6 @@ body {
   align-items: center;
   margin: 0 auto;
 }
-
 
 
 
@@ -120,11 +130,11 @@ section:nth-of-type(1) img {
 
 
 
-
+/* ------ SHOOTING TARGETS ------ */
 
 section:nth-of-type(2) p {
   padding: 0;
-  background: black;
+  background: var(--color-background);
 
   display:grid;
   place-items:center;
@@ -132,21 +142,14 @@ section:nth-of-type(2) p {
   z-index: 999;
 }
 
-
 section:nth-of-type(2) img {
   justify-self: center;
 }
-
-
-
 
 section:nth-of-type(2) {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: 1fr 0.4fr;
-
-
-
 
   margin: 0 10%;
   max-width: 125em;
@@ -215,7 +218,7 @@ section:nth-of-type(2) p:nth-of-type(6) {
 section:nth-of-type(2) div {
   height: 2px;
   width: 100%;
-  background: rgb(255, 255, 255, 0.1);
+  background: var(--color-timeline);
 
   grid-row-start: 2;
   grid-column-start: 1;
@@ -235,10 +238,6 @@ section:nth-of-type(2) div {
   width: 5%;
   max-width: 10em;
 } */
-
-
-
-
 
 
 
@@ -290,10 +289,7 @@ section:nth-of-type(2) div {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
-
   transform-origin: bottom center;
-
-  
 }
 
 @keyframes falling-target {
@@ -304,4 +300,54 @@ section:nth-of-type(2) div {
   100% {
     transform: perspective(10em) rotateX(80deg)
   }
+}
+
+
+
+
+
+
+
+
+body > section:nth-of-type(1), body > section:nth-of-type(2) {
+  display: none;
+}
+
+.info-page > div{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-info-background);
+  display: flex;
+  gap: 6em;
+
+  padding: 2em;
+
+
+
+
+  /* display: none; */
+}
+
+.info-page > img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border: 1px solid red;
+}
+
+
+.info-page div > img{
+  width: 40%;
+}
+
+.info-page > div > div > div {
+
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+
+  border-top: 2px solid var(--color-timeline);
+  padding: 2em 0;
+  
 }
