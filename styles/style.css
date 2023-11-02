@@ -1,3 +1,20 @@
+
+@font-face {
+	font-family: 'PP-Editorial-Old';
+	src: url('../fonts/ppeditorialold-regular-webfont.woff') format('woff');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PP-Editorial-Old';
+	src: url('../fonts/ppeditorialold-italic-webfont.woff') format('woff');
+	font-style: italic;
+}
+
+
+
+
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -10,6 +27,7 @@
 body {
   margin:0;
 }
+
 
 button:not([disabled]) {
   cursor:pointer;
@@ -28,11 +46,11 @@ img {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings: #FBFBFB;
+  --color-text: #FBFBFB;
   /* ... */
 
 }
-
 
 
 
@@ -43,8 +61,247 @@ img {
 
 h1 {
   color:var(--color-headings);
+  font-family: PP-Editorial-Old, serif;
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: normal;
+  line-height: 1.25;
+  margin: 1rem 0 0 0;
+  
+}
+
+p {
+  color: var(--color-text);
+  font-family: PP-Editorial-Old, Arial, sans-serif;
+  font-size: clamp(.75rem, 1vw, 2rem);
+}
+
+h1 span {
+  font-style: italic;
 }
 
 /* ... */
 
 
+body {
+  /* width: 100vw;
+  height: 100vh;
+  background: url('images/gunbarrel.jpg');
+  background-size: cover; */
+
+  background: black;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+
+
+/* ------ TEXT SECTION ------ */
+
+section:nth-of-type(1) {
+  text-align: center;
+  margin: auto;
+
+  margin-top: 2em;
+}
+
+section:nth-of-type(1) img {
+  width: 8%;
+  max-width: 8em;
+}
+
+
+
+
+
+
+section:nth-of-type(2) p {
+  padding: 0;
+  background: black;
+
+  display:grid;
+  place-items:center;
+  text-align:center;
+  z-index: 999;
+}
+
+
+section:nth-of-type(2) img {
+  justify-self: center;
+}
+
+
+
+
+section:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 1fr 0.4fr;
+
+
+
+
+  margin: 0 10%;
+  max-width: 125em;
+}
+
+
+/* shooting targets */
+section:nth-of-type(2) img:nth-of-type(1) {
+  grid-column-start: 1;
+}
+
+section:nth-of-type(2) img:nth-of-type(2) {
+  grid-column-start: 3;
+}
+
+section:nth-of-type(2) img:nth-of-type(3) {
+  grid-column-start: 5;
+}
+
+section:nth-of-type(2) img:nth-of-type(4) {
+  grid-column-start: 7;
+}
+
+section:nth-of-type(2) img:nth-of-type(5) {
+  grid-column-start: 9;
+}
+
+section:nth-of-type(2) img:nth-of-type(6) {
+  grid-column-start: 11;
+}
+
+
+/* years */
+section:nth-of-type(2) p:nth-of-type(1) {
+  grid-row-start: 2;
+  grid-column-start: 1;
+}
+
+section:nth-of-type(2) p:nth-of-type(2) {
+  grid-row-start: 2;
+  grid-column-start: 3;
+}
+
+section:nth-of-type(2) p:nth-of-type(3) {
+  grid-row-start: 2;
+  grid-column-start: 5;
+}
+
+section:nth-of-type(2) p:nth-of-type(4) {
+  grid-row-start: 2;
+  grid-column-start: 7;
+}
+
+section:nth-of-type(2) p:nth-of-type(5) {
+  grid-row-start: 2;
+  grid-column-start: 9;
+}
+
+section:nth-of-type(2) p:nth-of-type(6) {
+  grid-row-start: 2;
+  grid-column-start: 11;
+}
+
+
+/* timeline */
+section:nth-of-type(2) div {
+  height: 2px;
+  width: 100%;
+  background: rgb(255, 255, 255, 0.1);
+
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 12;
+  align-self: center;
+}
+
+
+/* section:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  margin: 0 10%;
+} */
+
+/* section:nth-of-type(2) img {
+  width: 5%;
+  max-width: 10em;
+} */
+
+
+
+
+
+
+
+
+#cursor {
+  width: 2.5em;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 999999;
+  
+  pointer-events: none;
+
+  transition: opacity 500ms ease;
+  
+  /* display: grid;
+  place-items: center; */
+
+  animation-name: cursor-rotate;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+
+
+
+@keyframes cursor-rotate {
+  0% {
+    transform: rotate(0deg);
+}
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+.shot-target {
+  animation-name: falling-target;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+
+  transform-origin: bottom center;
+
+  
+}
+
+@keyframes falling-target {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: perspective(10em) rotateX(80deg)
+  }
+}
