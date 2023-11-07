@@ -79,11 +79,49 @@ h1 {
   font-weight: normal;
   line-height: 1.25;
   margin: 1rem 0 0 0;
+
+  /*new*/
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
 }
 
 h1 span {
   font-style: italic;
+
+  /*new*/
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
 }
+
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+h1 span:nth-of-type(1) {
+  animation: fade-in 1.2s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+h1 span:nth-of-type(2) {
+  animation: fade-in 1.2s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
 
 h2 {
   color:var(--color-headings);
@@ -172,10 +210,15 @@ body {
   margin-top: 2em;
 }
 
+/*logo*/
 .home-page section:nth-of-type(1) img {
   width: 6vw;
   max-width: 8em;
   cursor: pointer;
+
+  /* new */
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
 }
 
 
@@ -197,7 +240,25 @@ body {
 
 .home-page section:nth-of-type(2) img {
   justify-self: center;
+
+  /* new */
+  transform: perspective(10em) rotateX(80deg);
+  transition-duration:1s;
+  transition-timing-function: ease-in;
+
+  /* animation-name: target-flipping-up;
+  animation-duration: 1s;
+  animation-delay: 2.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in; */
+  transform-origin: bottom center;
 }
+
+.home-page section:nth-of-type(2) img.up {
+  transform: perspective(10em) rotateX(0deg);
+}
+
 
 .home-page section:nth-of-type(2) img:hover{
   cursor: pointer;
@@ -210,6 +271,7 @@ body {
 
   margin: 0 10%;
   max-width: 125em;
+
 }
 
 
@@ -342,7 +404,7 @@ body {
 
 
 .shot-target {
-  animation-name: falling-target;
+  animation-name: target-falling-down;
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -350,13 +412,25 @@ body {
   transform-origin: bottom center;
 }
 
-@keyframes falling-target {
+@keyframes target-falling-down{
   0% {
     transform: rotateX(0deg);
   }
 
   100% {
-    transform: perspective(10em) rotateX(80deg)
+    transform: perspective(10em) rotateX(80deg);
+  }
+}
+
+
+/* new */
+@keyframes target-flipping-up {
+  0% {
+    transform: perspective(10em) rotateX(80deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
   }
 }
 
@@ -364,19 +438,6 @@ body {
 
 
 
-
-
-
-/* .home-page {
-  display: none;
-} */
-
-
-
-/* .info-page {
-  position: absolute;
-  z-index: 99999;
-} */
 
 
 .info-page {
@@ -403,8 +464,6 @@ body {
 
   transform: translateY(-150%);
   transition-duration: 4s;
-
-
 }
 
 .active-info {
@@ -433,6 +492,7 @@ body {
 
 .info-page > div:nth-of-type(2) {
   width: 60%;
+
 }
 
 .info-page > div:nth-of-type(2) > div {
@@ -513,6 +573,7 @@ body {
 .project-image:hover img {
   transform: scale(1.1);
 } */
+
 
 
 
