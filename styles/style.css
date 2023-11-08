@@ -135,20 +135,20 @@ h2 span {
   font-style: italic;
 }
 
-h3 {
+h3, dt {
   font-family: PP-Editorial-Old, serif;
   color: var(--color-headings);
-  font-size: clamp(1rem, 2vw, 4rem);
+  font-size: clamp(1rem, 2vw, 2.6rem);
   font-weight: normal;
   font-style: italic;
-
   margin: 0;
 }
 
-p {
+
+p, dd {
   color: var(--color-text);
   font-family: PP-Pangram-Sans, Arial, sans-serif;
-  font-size: clamp(1rem, 1vw, 2rem);
+  font-size: clamp(1rem, 1vw, 1.8rem);
   font-weight: 300;
   line-height: 1.6;
 
@@ -468,17 +468,19 @@ body {
   border-radius: 5px;
   transition: 3s ease-in-out;
   overflow: hidden;
+  height: auto;
+  /* width: 40%; */
   height: 100%;
-  width: 40%;
   max-width: 30em;
+  max-height: 40em;
 }
 
 /* img */
 .info-page > div:nth-of-type(1) img {
   transition: 0.8s ease;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -499,7 +501,7 @@ body {
 /* text */
 .info-page > div:nth-of-type(2) {
   width: 60%;
-  max-width: 50em;
+  max-width: 60em;
 }
 
 .info-page > div:nth-of-type(2) dl {
@@ -514,7 +516,7 @@ body {
 }
 
 .info-page > div:nth-of-type(2) dt {
-  padding: 2rem 3rem 2rem 0;
+  padding: 2rem 3em 2rem 0;
 }
 
 .info-page > div:nth-of-type(2) dd {
