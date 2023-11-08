@@ -1,8 +1,3 @@
-//TEST
-
-var blood = document.querySelector('.blood');
-var infoPage = document.querySelector('.info-page');
-
 
 //Pages
 var seanConneryPage = document.querySelector('.info-page:nth-of-type(1)');
@@ -11,6 +6,9 @@ var rogerMoorePage = document.querySelector('.info-page:nth-of-type(3)');
 var timothyDaltonPage = document.querySelector('.info-page:nth-of-type(4)');
 var pierceBrosnanPage = document.querySelector('.info-page:nth-of-type(5)');
 var danielCraigPage = document.querySelector('.info-page:nth-of-type(6)');
+
+var blood = document.querySelector('.blood');
+var infoPage = document.querySelector('.info-page');
 
 
 
@@ -23,7 +21,7 @@ var fifthTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type
 var sixthTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type(6)');
 
 
-//Targets flipping up
+// Targets flipping up
 setTimeout( () => {
     firstTarget.classList.add("up");
 }, 2500);
@@ -92,22 +90,22 @@ sixthTarget.addEventListener('click', function(){
 
 
 
-//Buttons
-var connerybutton = document.querySelector('section.info-page.sean-connery .button-primary');
-var lazenbybutton = document.querySelector('section.info-page.george-lazenby .button-primary');
 
+//Buttons
+var seanConneryButton = document.querySelector('section.info-page.sean-connery .button-primary');
+var georgeLazenbyButton = document.querySelector('section.info-page.george-lazenby .button-primary');
 var rogerMooreButton = document.querySelector('section.info-page.roger-moore .button-primary');
 var timothyDaltonButton = document.querySelector('section.info-page.timothy-dalton .button-primary');
 var pierceBrosnanButton = document.querySelector('section.info-page.pierce-brosnan .button-primary');
 var danielCraigButton = document.querySelector('section.info-page.daniel-craig .button-primary');
 
 
-connerybutton.addEventListener('click', function(){
+seanConneryButton.addEventListener('click', function(){
     blood.classList.remove('active-blood');
     seanConneryPage.classList.remove('active-info');
 });
 
-lazenbybutton.addEventListener('click', function(){
+georgeLazenbyButton.addEventListener('click', function(){
     blood.classList.remove('active-blood');
     georgeLazenbyPage.classList.remove('active-info');
 });
@@ -137,35 +135,22 @@ danielCraigButton.addEventListener('click', function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
+// Logo reset
 var logo = document.querySelector('.home-page > section:nth-of-type(1) > img');
 
 logo.addEventListener('click', function(){
-    firstTarget.classList.remove('shot-target');
-    secondTarget.classList.remove('shot-target');
-    thirdTarget.classList.remove('shot-target');
-    fourthTarget.classList.remove('shot-target');
-    fifthTarget.classList.remove('shot-target');
-    sixthTarget.classList.remove('shot-target');
+    location.reload();
 });
 
 
 
 
 
-
-// Cursor
+// Custom cursor
 var cursor = document.getElementById("cursor");
+var cursorDelay = 600;
 
+// gebruikte bron: https://www.youtube.com/watch?v=UMdvufdewD8
 window.onmousemove = e => {
     var x = e.clientX - cursor.offsetWidth / 2,
             y = e.clientY - cursor.offsetHeight / 2;
@@ -175,7 +160,46 @@ window.onmousemove = e => {
     }
 
     cursor.animate(keyframes, { 
-        duration: 800, 
+        duration: cursorDelay, 
         fill: "forwards" 
     });
 };
+
+
+
+
+
+// Wasted page
+var wastedBackground = document.querySelector('.wasted-page div:nth-of-type(1)');
+var wastedText = document.querySelector('.wasted-page div:nth-of-type(2)');
+var pierceBrosnanImage = document.querySelector('section.info-page.pierce-brosnan img');
+
+
+
+
+pierceBrosnanImage.addEventListener('click', function(){
+    if(cursorDelay === 9600){
+        var shakenNotStirred = new Audio('audio/shaken-not-stirred.mp3');
+        shakenNotStirred.play();
+        wastedBackground.classList.add('wasted-background-active');
+        wastedText.classList.add('wasted-text-active');
+    }
+
+    else {
+        cursorDelay += 1000;
+        var shakenNotStirred = new Audio('audio/shaken-not-stirred.mp3');
+        shakenNotStirred.play();
+    }
+});
+
+
+// Wasted button
+var resetButton = document.querySelector('.wasted-page button');
+
+resetButton.addEventListener('click', function(){
+    location.reload();
+});
+
+
+
+
