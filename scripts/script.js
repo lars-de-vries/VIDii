@@ -48,42 +48,48 @@ setTimeout( () => {
 
 
 
-
+var bulletSound = new Audio('audio/sneller.mp3');
 
 firstTarget.addEventListener('click', function(){
     firstTarget.classList.remove('up');
     blood.classList.add('active-blood');
     seanConneryPage.classList.add('active-info');
+    bulletSound.play();
 });
 
 secondTarget.addEventListener('click', function(){
     secondTarget.classList.add('shot-target');
     blood.classList.add('active-blood');
     georgeLazenbyPage.classList.add('active-info');
+    bulletSound.play();
 });
 
 thirdTarget.addEventListener('click', function(){
     thirdTarget.classList.add('shot-target');
     blood.classList.add('active-blood');
     rogerMoorePage.classList.add('active-info');
+    bulletSound.play();
 });
 
 fourthTarget.addEventListener('click', function(){
     fourthTarget.classList.add('shot-target');
     blood.classList.add('active-blood');
     timothyDaltonPage.classList.add('active-info');
+    bulletSound.play();
 });
 
 fifthTarget.addEventListener('click', function(){
     fifthTarget.classList.add('shot-target');
     blood.classList.add('active-blood');
     pierceBrosnanPage.classList.add('active-info');
+    bulletSound.play();
 });
 
 sixthTarget.addEventListener('click', function(){
     sixthTarget.classList.add('shot-target');
     blood.classList.add('active-blood');
     danielCraigPage.classList.add('active-info');
+    bulletSound.play();
 });
 
 
