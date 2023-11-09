@@ -13,12 +13,12 @@ var infoPage = document.querySelector('.info-page');
 
 
 //Targets
-var firstTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type(1)');
-var secondTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type(2)');
-var thirdTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type(3)');
-var fourthTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type(4)');
-var fifthTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type(5)');
-var sixthTarget = document.querySelector('section:nth-of-type(2) img:nth-of-type(6)');
+var firstTarget = document.querySelector('section:nth-of-type(2) button:nth-of-type(1)');
+var secondTarget = document.querySelector('section:nth-of-type(2) button:nth-of-type(2)');
+var thirdTarget = document.querySelector('section:nth-of-type(2) button:nth-of-type(3)');
+var fourthTarget = document.querySelector('section:nth-of-type(2) button:nth-of-type(4)');
+var fifthTarget = document.querySelector('section:nth-of-type(2) button:nth-of-type(5)');
+var sixthTarget = document.querySelector('section:nth-of-type(2) button:nth-of-type(6)');
 
 
 // Targets flipping up
@@ -48,7 +48,7 @@ setTimeout( () => {
 
 
 
-var bulletSound = new Audio('audio/sneller.mp3');
+var bulletSound = new Audio('audio/bullet.mp3');
 
 firstTarget.addEventListener('click', function(){
     firstTarget.classList.remove('up');

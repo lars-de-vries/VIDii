@@ -248,21 +248,26 @@ body {
 }
 
 /*shooting targets*/
-.home-page section:nth-of-type(2) img {
+.home-page section:nth-of-type(2) button {
   justify-self: center;
   transform: perspective(10em) rotateX(80deg);
   transition-duration:1s;
   transition-timing-function: ease-in;
   transform-origin: bottom center;
+  background: none;
+  padding: 0;
+  border: none;
 }
 
-.home-page section:nth-of-type(2) img.up {
+.home-page section:nth-of-type(2) button.up {
   transform: perspective(10em) rotateX(0deg);
 }
 
 .home-page section:nth-of-type(2) img:hover{
   cursor: pointer;
 }
+
+
 
 
 /*years*/
@@ -281,27 +286,27 @@ body {
 
 
 /* individual shooting targets */
-.home-page section:nth-of-type(2) img:nth-of-type(1) {
+.home-page section:nth-of-type(2) button:nth-of-type(1) {
   grid-column-start: 1;
 }
 
-.home-page section:nth-of-type(2) img:nth-of-type(2) {
+.home-page section:nth-of-type(2) button:nth-of-type(2) {
   grid-column-start: 3;
 }
 
-.home-page section:nth-of-type(2) img:nth-of-type(3) {
+.home-page section:nth-of-type(2) button:nth-of-type(3) {
   grid-column-start: 5;
 }
 
-.home-page section:nth-of-type(2) img:nth-of-type(4) {
+.home-page section:nth-of-type(2) button:nth-of-type(4) {
   grid-column-start: 7;
 }
 
-.home-page section:nth-of-type(2) img:nth-of-type(5) {
+.home-page section:nth-of-type(2) button:nth-of-type(5) {
   grid-column-start: 9;
 }
 
-.home-page section:nth-of-type(2) img:nth-of-type(6) {
+.home-page section:nth-of-type(2) button:nth-of-type(6) {
   grid-column-start: 11;
 }
 
